@@ -13,20 +13,52 @@
     <div id="world-map" style="width: 1500px; height: 1000px"></div>
     <script>
         $(document).ready(function () {
+            var countryData = {};
             $('#world-map').vectorMap({
                 map: 'world_merc',
-                selectedColor: '#666666',
+                zoomOnScroll: false,
                 series: {
                     regions: [{
-                        attribute: 'fill'
+                        //attribute: 'fill'
                     }]
                 },
+                regionStyle: {
+                    initial: {
+                        fill: '#c9c9c9'
+                    },
+                    selected: {
+                        fill: '#ff3030'
+                    }
+                },
                 onRegionTipShow: function (e, el, code) {
-                    el.html(code);
+                    if (countryData[code]) {
+                        el.html(el.html() + '</br>' + countryData[code]);
+                    }
+                    
                 }
             });
             var worldMap = $('#world-map').vectorMap('get', 'mapObject');
-            worldMap.setSelectedRegions(['RU', 'US']);
+
+
+            $.ajax({
+                url: 'phishfinder.asmx/ForeignLoginsThisWeek',
+                method: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    $(data).each(function (index, item) {
+                        if (countryData.hasOwnProperty(item.Alpha2Code)) {
+                            var temp = countryData[item.Alpha2Code];
+                            countryData[item.Alpha2Code] = temp + '</br>' + item.UserName + ' - ' + item.IP;
+                        }
+                        else {
+                            countryData[item.Alpha2Code] = item.UserName;
+                        }
+                    });
+                },
+                complete: function () {
+                    worldMap.setSelectedRegions(countryData);
+                }
+            });
 
         });
     </script>
