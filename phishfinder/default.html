@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="jquery-jvectormap-world-merc.js"></script>
+    <link href="jquery-jvectormap-2.0.3.css" rel="stylesheet" type="text/css" media="screen" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>hey buddy</h1>
+    <div id="world-map" style="width: 1500px; height: 1000px"></div>
+    <script>
+        $(document).ready(function () {
+            $('#world-map').vectorMap({
+                map: 'world_merc',
+                selectedColor: '#666666',
+                series: {
+                    regions: [{
+                        attribute: 'fill'
+                    }]
+                },
+                onRegionTipShow: function (e, el, code) {
+                    el.html(code);
+                }
+            });
+            var worldMap = $('#world-map').vectorMap('get', 'mapObject');
+            worldMap.setSelectedRegions(['RU', 'US']);
+
+        });
+    </script>
+</body>
+</html>

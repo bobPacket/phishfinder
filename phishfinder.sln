@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "phishfinder", "phishfinder\", "{6A3772EF-54C9-48CD-A800-436E4808697F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51510"
+		Debug.AspNetCompiler.PhysicalPath = "phishfinder\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51510\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51510"
+		Release.AspNetCompiler.PhysicalPath = "phishfinder\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51510\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51510"
+		SlnRelativePath = "phishfinder\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A3772EF-54C9-48CD-A800-436E4808697F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3772EF-54C9-48CD-A800-436E4808697F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98F35FC8-75F3-4B52-8FC1-9D7C6E41A39F}
+	EndGlobalSection
+EndGlobal
